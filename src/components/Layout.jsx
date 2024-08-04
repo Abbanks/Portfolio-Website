@@ -1,6 +1,6 @@
 import Header from './Header';
 import { useTheme } from '../contexts/ThemeContext';
-import React, { useRef}  from 'react';
+import React, { useRef, useEffect}  from 'react';
 import Home from '../pages/Home';
 import ContactMe from '../pages/Contactme';
 import { Footer } from '../components/Footer';
@@ -37,9 +37,9 @@ export default function Layout() {
             ref={headerRef} scrollToHome={handleHomeClick} />
             <main className="px-[87px]">
                 <Home nextSectionRef={mySkillsRef} theme={theme}/>
-                <MySkills ref={mySkillsRef} />
-                <About ref={aboutRef} />
-                <Projects ref={projectsRef} />
+                <MySkills ref={mySkillsRef} theme={theme}/>
+                <About ref={aboutRef} theme={theme}/>
+                <Projects ref={projectsRef} theme={theme} />
                 <ContactMe ref={contactmeRef} theme={theme} />
             </main>
             <Footer scrollToHome={handleHomeClick}/>

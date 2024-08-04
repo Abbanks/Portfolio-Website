@@ -1,9 +1,14 @@
 import React, { forwardRef } from 'react'
 import img from '../assets/myimg.jpg'
+import sparklesblack from "../assets/sparkles-black.svg";
+import sparkleswhite from "../assets/sparkles-white.svg";
 
 const AboutMe = forwardRef((props, ref) => {
+    const { theme } = props;
+    const icon = theme === 'dark' ? sparkleswhite : sparklesblack;
+
     return (
-        <section className='pt-20' id="about" ref={ref}>
+        <section className='pt-20 animate-fade-in' id="about" ref={ref}>
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="flex items-center justify-center">
@@ -14,12 +19,16 @@ const AboutMe = forwardRef((props, ref) => {
                         />
                     </div>
 
-                    <div className="font-poppins pt-10">
-                        <h1 className="text-3xl md:text-4xl font-semibold pb-4">
-                            <span className="font-normal">About</span> <span className="font-bold">Me</span>
-                        </h1>
+                    <div className="font-poppins pt-10"> 
+                        <div className='flex space-y-4 items-center space-y-0 md:flex-row
+                         space-x-4 pb-2'> 
+                            <h1 className="text-3xl md:text-4xl font-semibold">
+                                <span className="font-normal">About</span> <span className="font-bold">Me</span>
+                            </h1>
+                        <img src={icon} alt="sparkles" className="h-9 w-9" />
+                        </div>
                         <p className="text-base md:text-base leading-relaxed">
-                            Hi, I’m Abigail Oluwabanke Eboda, but my friends calls me Big Banks. I’m a Software Engineer living in Nigeria.
+                            Hi, I’m Abigail Oluwabanke Eboda, but my friends call me Big Banks. I’m a Software Engineer living in Nigeria.
                             <br /><br />
                             I have worked on several projects, primarily focusing on web applications.
                             <br /><br />

@@ -17,7 +17,7 @@ const Home = forwardRef(({theme, nextSectionRef }) => {
   };
 
   return (
-    <section className='pt-[84px]'>
+    <section className='pt-[84px] animate-fade-in'>
       <div className="flex justify-center mt-3">
         <img src={sparkle} alt="sparkle" className="h-3 w-3" />
       </div>
@@ -50,7 +50,7 @@ const Home = forwardRef(({theme, nextSectionRef }) => {
         </div>
       </div>
 
-      <div className="flex justify-center animate-bounce pt-4">
+      <div className="flex justify-center animate-bounce pt-8 md:pt-4">
         <img
           src={chevrondown}
           alt="chevron down"
